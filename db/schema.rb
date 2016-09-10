@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160910170548) do
+ActiveRecord::Schema.define(version: 20160910174405) do
 
   create_table "groups", force: true do |t|
     t.string   "name",                       null: false
@@ -27,6 +27,17 @@ ActiveRecord::Schema.define(version: 20160910170548) do
     t.datetime "registered_on",             null: false
     t.datetime "expires_on",                null: false
     t.integer  "amount",        default: 0, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "payments", force: true do |t|
+    t.string   "key"
+    t.string   "through"
+    t.decimal  "amount",     precision: 10, scale: 0, default: 0
+    t.integer  "user_id"
+    t.integer  "group_id"
+    t.boolean  "lock"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
