@@ -13,6 +13,9 @@
     <div class="collapse navbar-collapse" id="navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
             <% if current_user %>
+                <% if false %>
+                    <li><%= link_to 'Stream Netflix', stream_path %></li>
+                <% end %> 
                 <li><%= link_to 'Create A Group', new_group_path %></li>
                 <li><%= link_to 'Join A Group', groups_path %></li>
                 <li><%= link_to 'My Groups', groups_users_path %></li>

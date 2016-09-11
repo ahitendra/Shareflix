@@ -6,13 +6,19 @@ Shareflix::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'main#index'
 
-  resources :groups
+  resources :groups do
+    collection do
+      post 'join/:id' => 'groups#join'
+    end
+  end
 
   resources :users do
     collection do
       get 'groups'
     end
   end
+
+  get "/stream" => "main#stream"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

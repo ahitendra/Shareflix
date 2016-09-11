@@ -16,9 +16,13 @@
 		        <% end %>
 		      </div>
 		      <% if @num_of_grps > 0 %>
-		      	<a class="btn btn-lg center-block">Join</a>
+		      	<a class="btn btn-lg center-block"><strike>Join</strike></a>
 		      <% else %>
-		      	<a href="#" class="btn btn-lg center-block">Join</a>
+		      	<%= form_for :group, url: "/groups/join/#{group.id}" do |g| %>
+		      		<div class="btn btn-lg center-block">
+		      		  <%= g.submit "Join" %>
+		      		</div>
+		      	<% end %>
 		      <% end %>
 		    </div>
 		  </div>

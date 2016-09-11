@@ -1,0 +1,16 @@
+
+<div class="container full-screen">
+  <section class="row">
+    <h1 class="title">Shareflix</h1>
+    <hr/>
+    <div class="col-xs-8 col-xs-offset-2">
+      <p class="lead text-center">Watch your favourite TV Shows and Movies for a cheaper cost</p>
+      <hr/>
+    </div>
+  </section>
+  <% if current_user.present? %>
+  	<iframe src="http://cdn.fansided.com/wp-content/blogs.dir/340/files/2016/04/Netflix-Red-Logo.jpg" width="800" height="450">
+  	  <p>Your browser does not support iframes.</p>
+  	</iframe>
+	<% end %>
+</div>

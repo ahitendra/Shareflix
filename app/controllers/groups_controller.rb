@@ -32,4 +32,16 @@ class GroupsController < ApplicationController
 		@num_of_grps = current_user.groups.length
 	end
 
+	def join
+		group = Group.find(params[:id])
+		if current_user.groups.length > 0
+			flash[:error] = "You are already a member of a group"
+			redirect_to :back
+		else	
+			users_group = UsersGroup.new(:group_id => group.id, :user_id => current_user.id)
+			users_group.save!
+			redirect_to group
+		end
+	end
+
 end
