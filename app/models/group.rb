@@ -7,10 +7,12 @@ class Group < ActiveRecord::Base
 	private
 
 	def before_save_tasks
-		if self.users.size == 4
-			self.formed = true
-		else
-			self.formed = false
+		if self.id.present?
+			if self.users.length == 4
+				self.formed = true
+			else
+				self.formed = false
+			end
 		end
 	end
 

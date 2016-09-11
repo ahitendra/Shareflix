@@ -8,4 +8,14 @@ class ApplicationController < ActionController::Base
 		devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:name, :email, :password) }
 		devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:name, :email, :password, :current_password, :is_female, :date_of_birth) }
 	end
+
+	protected
+	
+	def authenticate_user
+		if !current_user.present?
+			flash[:error] = "You must sign in to access"
+			redirect_to :back
+		end
+	end
+	
 end

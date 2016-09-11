@@ -1,0 +1,19 @@
+<html>
+<body>
+
+<div class="container">
+  <h2>Create A Group</h2>
+  <%= form_for :group, url: groups_path do |g| %>
+    <div class="form-group">
+      <%= g.label :name %><br>
+      <%= g.text_field :name %>
+    </div>
+  
+    <div class="actions">
+        <%= g.submit "Create" %>
+    </div>
+  <% end %>
+</div>
+
+</body>
+</html>

@@ -13,7 +13,9 @@
     <div class="collapse navbar-collapse" id="navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
             <% if current_user %>
-                <li><%= link_to 'My Groups', '#' %></li>
+                <li><%= link_to 'Create A Group', new_group_path %></li>
+                <li><%= link_to 'Join A Group', groups_path %></li>
+                <li><%= link_to 'My Groups', groups_users_path %></li>
                 <li><%= link_to 'Edit Profile',edit_user_registration_path %></li>
                 <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
             <% else %>

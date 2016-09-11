@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160910174405) do
+ActiveRecord::Schema.define(version: 20160911054108) do
 
   create_table "groups", force: true do |t|
     t.string   "name",                       null: false
     t.boolean  "formed",     default: false, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "admin_id",                   null: false
   end
 
   create_table "netflix_accounts", force: true do |t|
