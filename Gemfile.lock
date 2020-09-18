@@ -26,9 +26,12 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
     arel (4.0.2)
+    autoprefixer-rails (10.0.0.2)
+      execjs
     bcrypt (3.1.11)
-    bootstrap-sass (3.1.1.1)
-      sass (~> 3.2)
+    bootstrap-sass (3.4.1)
+      autoprefixer-rails (>= 5.2.1)
+      sassc (>= 2.0.0)
     builder (3.1.4)
     coderay (1.1.1)
     coffee-rails (4.0.1)
@@ -47,6 +50,7 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.7.0)
+    ffi (1.13.1)
     hike (1.2.3)
     i18n (0.7.0)
     jbuilder (1.5.3)
@@ -98,6 +102,8 @@ GEM
       sass (~> 3.2.2)
       sprockets (~> 2.8, < 3.0)
       sprockets-rails (~> 2.0)
+    sassc (2.4.0)
+      ffi (~> 1.9)
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
@@ -130,7 +136,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap-sass (~> 3.1.1)
+  bootstrap-sass (~> 3.4.1)
   coffee-rails (~> 4.0.0)
   devise
   jbuilder (~> 1.2)
